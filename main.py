@@ -52,6 +52,7 @@ def WebViewApp(ifCef=False):
 
     # 是否为开发环境
     Config.devEnv = sys.flags.dev_mode
+    # Config.devEnv = True
 
     # 前端页面目录
     if Config.devEnv:

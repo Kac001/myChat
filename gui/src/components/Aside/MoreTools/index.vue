@@ -23,7 +23,13 @@
       </span>
       <template #dropdown>
         <el-dropdown-menu>
-          <el-dropdown-item @click="state.visibleProxyDialog = true">
+          <el-dropdown-item @click="state.visibleAPIDialog = true">
+            <el-icon>
+              <ele-Guide />
+            </el-icon>
+            自定义api-server
+          </el-dropdown-item>
+          <el-dropdown-item divided @click="state.visibleProxyDialog = true">
             <el-icon>
               <ele-Guide />
             </el-icon>
@@ -42,6 +48,9 @@
     <!-- 设置代理 -->
     <ProxyDialog :visible="state.visibleProxyDialog" @close="onCloseProxyDialog" />
 
+     <!-- 设置apiserver -->
+    <ApiDialog :visible="state.visibleAPIDialog" @close="onCloseAPIDialog" />
+
     <!-- 主题广场 -->
     <ThemeStore />
 
@@ -51,6 +60,7 @@
 <script setup>
 import { ElMessageBox } from 'element-plus'
 import ProxyDialog from '@/components/Aside/MoreTools/ProxyDialog.vue'
+import ApiDialog from '@/components/Aside/MoreTools/ApiDialog.vue'
 import BtnUpdate from '@/components/Aside/MoreTools/BtnUpdate.vue'
 import ThemeStore from '@/components/Aside/MoreTools/ThemeStore.vue'
 import { reactive } from 'vue'
@@ -58,7 +68,8 @@ import { useStoreAside } from '@/stores/aside'
 
 const storeAside = useStoreAside()
 const state = reactive({
-  visibleProxyDialog: false
+  visibleProxyDialog: false,
+  visibleAPIDialog: false
 })
 
 const onSet = async () => {
@@ -82,6 +93,10 @@ const onSet = async () => {
 
 const onCloseProxyDialog = (visible) => {
   state.visibleProxyDialog = visible
+}
+
+const onCloseAPIDialog = (visible) => {
+  state.visibleAPIDialog = visible
 }
 
 // 主题商店

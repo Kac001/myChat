@@ -31,7 +31,7 @@ block_cipher = pyi_crypto.PyiBlockCipher(key='0123456789123456')
 a = Analysis(['../../main.py'],
             pathex=[],
             binaries=[],
-            datas=[('../../gui/dist', 'web'), ('../../static', 'static'), ('../../pyapp/pyenv/lib/python3.9/site-packages/tldextract', 'tldextract')],
+            datas=[('../../gui/dist', 'web'), ('../../static', 'static'), ('../../pyapp/pyenv/lib/python3.8/site-packages/tldextract', 'tldextract')],
             hiddenimports=[],
             hookspath=[],
             hooksconfig={},

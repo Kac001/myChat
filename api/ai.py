@@ -48,6 +48,12 @@ class AI:
                     os.environ["HTTPS_PROXY"] = f'http://{proxyHTTP}'
 
         '''获取AI返回信息'''
+        # 设置apiserver
+        api_server = orm.getStorageVar('apiserver')
+        if api_server!='':
+            openai.api_base = api_server + '/v1'
+
+
         openai.api_key = AI.skOpenAI
         # 访问OpenAI接口
         response = openai.ChatCompletion.create(model=AI.model, temperature=AI.temperature, messages=messages, request_timeout=(10, 290))

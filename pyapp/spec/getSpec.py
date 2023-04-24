@@ -32,7 +32,7 @@ logoExt = 'icns' if ifMac else 'ico'
 # 手动将遗漏的模块进行打包
 addModules = ''
 if ifMac:
-    addModules = ", ('../../pyapp/pyenv/lib/python3.9/site-packages/tldextract', 'tldextract')"
+    addModules = ", ('../../pyapp/pyenv/lib/python3.8/site-packages/tldextract', 'tldextract')"
 else:
     addModules = ", ('../../pyapp/pyenv/pyenv/Lib/site-packages/tldextract', 'tldextract')"
 
