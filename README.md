@@ -1,6 +1,6 @@
 ### 一句话介绍
 
-myChat 是一款第三方 ChatGPT 客户端，基于 OpenAI 接口调用，支持 Windows 和 macOS 系统。
+myChat 是一款第三方 ChatGPT 客户端，基于 OpenAI 接口调用，支持 Windows 和 macOS 系统。支持自定义api server
 
 ### 运行前提条件
 
